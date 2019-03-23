@@ -7,8 +7,11 @@
     "serve": "live-server public/",
     "build": "webpack",
     "dev-server": "webpack-dev-server",
+    "build:prod": "webpack -p --env production",
     "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch",
-    "test": "jest --config=jest.config.json"
+    "test": "jest --config=jest.config.json",
+    "start": "node server/server.js",
+    "heroku-postbuild": "npm run build:prod"
   },
   "author": "kk",
   "license": "ISC",
@@ -22,6 +25,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.4",
     "enzyme-to-json": "^3.3.5",
+    "express": "^4.15.4",
     "jest": "^20.0.4",
     "live-server": "^1.2.1",
     "moment": "^2.24.0",
